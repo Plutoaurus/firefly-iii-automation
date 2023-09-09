@@ -143,7 +143,7 @@ if [ $InstallFF = 'y' ] || [ $InstallFF = 'Y' ]; then
     echo
     ip address
   fi
-  
+fi  
 if [ $InstallDI = 'y' ] || [ $InstallDI = 'Y' ]; then
   # Check if Data-Importer is installed
   if [ ! -d /var/www/html/firefly-iii ] || [ ! -d /var/www/html/data-importer ]; then
