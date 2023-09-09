@@ -195,7 +195,18 @@ if [ $InstallDI = 'y' ] || [ $InstallDI = 'Y' ]; then
   
     sudo chown -R www-data:www-data data-importer
     sudo chmod -R 775 data-importer/storage
-    sudo cp firefly-iii/data-importer/.env.example .env
+    #sudo cp firefly-iii/data-importer/.env.example .env
     echo
+
+    # Editing apache to allow modules
+    sudo cp $HOME/firefly-iii-automation/apache2.conf /etc/apache2/
+    sudo a2dismod php7.4
+    sudo a2enmod php8.2
+    sudo a2enmod 
+    
+    # Restart apache web service
+    sudo service apache2 restart
+    echo
+    echo "All done..."
   fi
 fi
